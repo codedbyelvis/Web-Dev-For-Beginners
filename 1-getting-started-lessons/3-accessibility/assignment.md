@@ -13,3 +13,9 @@ Your first task would be to identify this site, detail the ways in which you thi
 
 ----
 Student Report: includes paragraphs on how inaccessible the site is, the Lighthouse report captured in pdf, a list of ten points to improve, with details on how to improve it
+
+Wesite: Tennessee Wilson County Public Library Directory https://tnsos.net/TSLA/PLD/index.php?county=Wilson&sel=count
+First Look: The interactive map relies on colors, as well as the view/hide buttons. Much of the information is in small text or too close together.
+1st Audit: 41 Accessibility score on Lighthouse
+Suggested changes:
+Give images Alt names(especially socials logos that are links), use colorblind-friendly colors with high contrast for the map(and patterns if possible), increase spacing between layout.
