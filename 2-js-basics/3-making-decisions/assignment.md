@@ -38,3 +38,51 @@ let studentsWhoPass = [];
 | Criteria | Exemplary                      | Adequate                      | Needs Improvement               |
 | -------- | ------------------------------ | ----------------------------- | ------------------------------- |
 |          | Complete solution is presented | Partial solution is presented | Solution with bugs is presented |
+
+
+const firstGradingSystem = [1,2,3,4,5];
+const firstGradingSystemPassing = [3,4,5];
+const secondGradingSystem = ['A', 'A-', 'B', 'B-', 'C', 'C-'];
+const secondGradingSystemPassing = ['A', 'A-', 'B', 'B-', 'C'];
+let allStudents = [
+  'A',
+  'B-',
+  1,
+  4,
+  5,
+  2
+]
+// array `allStudents` representing all students and their grades
+
+
+function passesFirstSystem(grade) {
+  return firstGradingSystemPassing.includes(grade);
+}
+
+const passesSecondSystem = grade =>
+secondGradingSystemPassing.includes(grade);
+
+const studentsWhoPass = allStudents.map((grade) => {
+  if (typeof grade === 'number') {
+      return {
+        grade: grade,
+        system: 'first',
+        hasPassed: passesFirstSystem(grade),
+      }; 
+  }else if (typeof grade === 'string') {
+    return {
+      grade: grade,
+      system: 'second',
+      hasPassed: passesSecondSystem(grade),
+    };
+  }else {
+      console.warn(`Unexpected grade type for: ${grade}`);
+
+      return {
+        grade: grade,
+        system: 'unknown',
+        hasPassed: false,
+      };
+    }
+});
+console.log(studentsWhoPass);
